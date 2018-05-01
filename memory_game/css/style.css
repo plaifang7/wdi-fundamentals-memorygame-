@@ -106,7 +106,17 @@ font-size: 0;
 .name{
 	color: #F15B31;
 	font-weight: 700;
+
 }
+.tweet{
+	color: #FFFFFF;
+	font-size: 10px;
+	padding: 10px;
+	margin: 10px;
+	background-color: #00A6B3;
+}
+
+
 button{
 	color: #0D2C40;
 	background-color: #F15B31;

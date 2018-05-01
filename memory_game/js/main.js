@@ -64,5 +64,9 @@ document.getElementById('game-board').appendChild(cardElement);
 }
 
 createBoard();
+var newGame = function(){
+	$('#newGame').on('click', alert('button clicked'));
+}
 
+newGame();
 
