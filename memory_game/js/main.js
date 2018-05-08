@@ -45,28 +45,49 @@ var flipcard = function (){
 	cardId = this.getAttribute('data-id');
 
 
-cardsInPlay.push(cards[cardId].rank);
+	cardsInPlay.push(cards[cardId].rank);
 
-this.setAttribute('src', cards[cardId].cardImage);	
-if (cardsInPlay.length === 2) {
-	
-checkForMatch();
-}
+	this.setAttribute('src', cards[cardId].cardImage);	
+	if (cardsInPlay.length === 2) {
+		checkForMatch();
+	}
 };
+
 var createBoard = function(){
 	for (var i = 0; i < cards.length; i++) {
-var cardElement = document.createElement('img');
-cardElement.setAttribute('src', 'images/back.png');
-cardElement.setAttribute('data-id', i);
-cardElement.addEventListener('click', flipcard);
-document.getElementById('game-board').appendChild(cardElement);
-}
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute('data-id', i);
+		cardElement.addEventListener('click', flipcard);
+		document.getElementById('game-board').appendChild(cardElement);
+	}
 }
 
 createBoard();
-var newGame = function(){
-	$('#newGame').on('click', alert('button clicked'));
-}
 
-newGame();
+//second attempt at creating code for reset button
+	var resetBtn = document.querySelector('#reset');
+	document.querySelector('button').addEventListener('click', function(e){
+	e.preventDefault();
+	document.getElementById('game-board').value = "";
+	createBoard();
+	}, false);
+;
+
+
+
+// tried to make a button function
+// var newGame = function(){
+// 	for (var i = 0; i < cards.length; i++) {
+// 		var resetGame = document.resetGame('img');
+// resetGame.addEventListener('click', alert('New Game'));
+// resetGame.setAttribute('src', 'images/back.png');
+// resetGame.setAttribute('data-id', i);
+// document.getElementById('game-board').appendChild(resetGame);
+// // }
+// }
+
+// newGame();
+
+
 
