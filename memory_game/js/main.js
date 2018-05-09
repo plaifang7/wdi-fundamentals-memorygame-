@@ -69,7 +69,7 @@ createBoard();
 	var resetBtn = document.querySelector('#reset');
 	document.querySelector('button').addEventListener('click', function(e){
 	e.preventDefault();
-	document.getElementById('game-board').value = "";
+	document.getElementById('game-board').innerHTML = "";
 	createBoard();
 	}, false);
 ;
